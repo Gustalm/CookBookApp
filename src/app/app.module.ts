@@ -9,6 +9,9 @@ import { TabsPage } from "../pages/tabs/tabs";
 import { RecipeNewPage } from "../pages/recipes/new/recipe-new";
 import { RecipeListPage } from "../pages/recipes/recipes-list";
 import { ShoppingListPage } from "../pages/shopping-list/shopping-list";
+import { NewRecipeComponent } from "../components/recipe/new/new-recipe.component";
+import { RecipeService } from "../services/recipe.service";
+import { LoadingService } from "../services/loading.service";
 
 @NgModule({
   declarations: [
@@ -16,7 +19,8 @@ import { ShoppingListPage } from "../pages/shopping-list/shopping-list";
     TabsPage,
     RecipeNewPage,
     RecipeListPage,
-    ShoppingListPage
+    ShoppingListPage,
+    NewRecipeComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { ShoppingListPage } from "../pages/shopping-list/shopping-list";
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    RecipeService,
+    LoadingService
   ]
 })
 export class AppModule { }
