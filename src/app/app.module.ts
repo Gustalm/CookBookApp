@@ -9,9 +9,11 @@ import { TabsPage } from "../pages/tabs/tabs";
 import { RecipeNewPage } from "../pages/recipes/new/recipe-new";
 import { RecipeListPage } from "../pages/recipes/recipes-list";
 import { ShoppingListPage } from "../pages/shopping-list/shopping-list";
-import { NewRecipeComponent } from "../components/recipe/new/new-recipe.component";
+// import { NewRecipeComponent } from "../components/recipe/new/new-recipe.component";
 import { RecipeService } from "../services/recipe.service";
 import { LoadingService } from "../services/loading.service";
+import { RecipeDetailPage } from "../pages/recipes/detail/recipe-detail";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,9 +22,11 @@ import { LoadingService } from "../services/loading.service";
     RecipeNewPage,
     RecipeListPage,
     ShoppingListPage,
-    NewRecipeComponent
+    // NewRecipeComponent,
+    RecipeDetailPage
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -32,7 +36,8 @@ import { LoadingService } from "../services/loading.service";
     TabsPage,
     RecipeNewPage,
     RecipeListPage,
-    ShoppingListPage
+    ShoppingListPage,
+    RecipeDetailPage
   ],
   providers: [
     StatusBar,

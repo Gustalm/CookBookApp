@@ -1,0 +1,24 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>recipe-detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content text-center padding>
+<h2>{{ recipe.title }}</h2>
+<p>Dificulty</p>
+<p>{{ recipe.description }}</p>
+
+<ion-list *ngIf="recipe.ingredients">
+  <ion-item *ngFor="let ingredient of recipe.ingredients; let i = index;">
+    {{ ingredient.name }} {{ ingredient.amount }}
+  </ion-item>
+</ion-list>
+
+<button ion-button clear> Add Ingredieents to Shopping List</button>
+<button ion-button outline (click)="onEditRecipe()"> Edit Recipe</button>
+</ion-content>

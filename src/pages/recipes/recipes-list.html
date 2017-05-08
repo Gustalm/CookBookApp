@@ -14,9 +14,22 @@
 
 
 <ion-content padding>
-<ion-fab bottom right>
-  <button ion-fab mini (click)="onAddClick()">
+  <ion-list *ngIf="recipes.length > 0; else emptyRecipes">
+    <ion-card (click)="onRecipeSelect(recipe)" *ngFor="let recipe of recipes; let i = index;">
+      <ion-card-header>
+        {{ recipe.title }}
+      </ion-card-header>
+      <ion-card-content>
+        {{ recipe.description }}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ng-template #emptyRecipes>
+    <h5> Add some recipes!</h5>
+  </ng-template>
+  <ion-fab bottom right>
+    <button ion-fab mini (click)="onAddClick()">
     <ion-icon name="add"></ion-icon>
   </button>
-</ion-fab>
+  </ion-fab>
 </ion-content>

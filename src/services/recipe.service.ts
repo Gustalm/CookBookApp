@@ -45,6 +45,14 @@ export class RecipeService implements OnInit {
         return observable;
     }
 
+    updateRecipe(recipe: Recipe) {
+        let recipeIndex = this.recipes.findIndex(item => item.id == recipe.id);
+
+        this.recipes[recipeIndex] = recipe;
+
+        return recipe;
+    }
+
     removeRecipe(recipe: Recipe): boolean {
         let index = this.recipes.indexOf(recipe);
         this.emitRecipes();

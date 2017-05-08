@@ -13,4 +13,6 @@ import { RecipeNewPage } from './recipe-new';
     RecipeNewPage
   ]
 })
-export class RecipeNewModule {}
+export class RecipeNewModule {
+  
+}
